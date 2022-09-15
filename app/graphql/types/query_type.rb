@@ -7,7 +7,7 @@ module Types
     field :users, [Types::UserType], null: false
 
     def users
-      User.all
+      User.preload(:posts)
     end
 
     field :user, Types::UserType, null: false do
